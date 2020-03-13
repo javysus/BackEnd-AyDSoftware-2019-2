@@ -19,16 +19,7 @@ public class MyUserDetails implements UserDetails {
     public MyUserDetails(User user){
         this.userName = user.getUserName();
         this.password = user.getPassword();
-        this.roles = Arrays.stream(user.getRoles().split(","))
-                    .map(SimpleGrantedAuthority::new)
-                    .collect(Collectors.toList());
-    }
-
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        // TODO Auto-generated method stub
-        return this.roles;
-    }
+    
 
     @Override
     public String getPassword() {
