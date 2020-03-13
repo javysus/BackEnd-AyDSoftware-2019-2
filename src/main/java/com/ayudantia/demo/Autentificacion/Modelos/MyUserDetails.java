@@ -19,7 +19,7 @@ public class MyUserDetails implements UserDetails {
     public MyUserDetails(User user){
         this.userName = user.getUserName();
         this.password = user.getPassword();
-    
+    }
 
     @Override
     public String getPassword() {
