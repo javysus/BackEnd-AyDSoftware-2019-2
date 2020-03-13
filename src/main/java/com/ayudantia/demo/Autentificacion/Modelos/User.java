@@ -21,6 +21,12 @@ public class User{
     @Column(name="password")
     private String password;
 
+    @Column(name="active")
+    private boolean active = true;
+
+    @Column(name="roles")
+    private String roles = "ROLE_USER";
+
     public User(){
         
     }
@@ -29,7 +35,8 @@ public class User{
         this.id = id;
         this.userName = userName;
         this.password = password;
-
+        this.active = active;
+        this.roles = roles;
     }
 
     public long getId() {
@@ -54,6 +61,26 @@ public class User{
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public boolean isActive() {
+        return this.active;
+    }
+
+    public boolean getActive() {
+        return this.active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+
+    public String getRoles() {
+        return this.roles;
+    }
+
+    public void setRoles(String roles) {
+        this.roles = roles;
     }
 
 }
