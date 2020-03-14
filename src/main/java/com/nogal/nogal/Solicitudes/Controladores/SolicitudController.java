@@ -30,7 +30,7 @@ public class SolicitudController{
     JwtUtil jwtUtil;
 
     @PostMapping("/solicitud")
-    public boolean crear(@RequestBody @Valid Solicitud solicitud){
+    public boolean crear(@RequestBody Solicitud solicitud){
         return servicio.crear(solicitud);
     }
 
