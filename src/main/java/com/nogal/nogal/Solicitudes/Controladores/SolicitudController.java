@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("v1/solicitud")
-@CrossOrigin(origins = "*", exposedHeaders = "Access-Control-Allow-Origin", methods= {RequestMethod.GET,RequestMethod.POST})
+@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST})
 public class SolicitudController{
     @Autowired
     SolicitudService servicio;
@@ -30,7 +30,7 @@ public class SolicitudController{
     JwtUtil jwtUtil;
 
     @PostMapping("/solicitud")
-    public boolean crear(@RequestBody Solicitud solicitud){
+    public boolean crear(@RequestBody @Valid Solicitud solicitud){
         return servicio.crear(solicitud);
     }
 

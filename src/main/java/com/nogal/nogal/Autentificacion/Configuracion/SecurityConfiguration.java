@@ -36,7 +36,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
             .antMatchers("/autentificar").permitAll()
             .antMatchers("/crear").permitAll()
             .antMatchers("/").permitAll()
-            .antMatchers("v1/solicitud/solicitud").permitAll()
             .anyRequest().authenticated()
             .and().sessionManagement()
             .sessionCreationPolicy(SessionCreationPolicy.STATELESS); // no crear una sesion
