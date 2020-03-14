@@ -20,8 +20,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST})
 @RequestMapping("v1/solicitud")
+@CrossOrigin(origins = "*", exposedHeaders = "Access-Control-Allow-Origin", methods= {RequestMethod.GET,RequestMethod.POST})
 public class SolicitudController{
     @Autowired
     SolicitudService servicio;
