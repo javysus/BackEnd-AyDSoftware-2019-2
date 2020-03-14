@@ -35,6 +35,15 @@ public class Solicitud{
     @Column(name="longitud")
     private float longitud;
 
+    @Column(name="asunto")
+    private String asunto;
+
+    @Column(name="categoria")
+    private int categoria;
+
+    @Column(name="descripcion")
+    private String descripcion;
+    
     @Column(name="aceptada_cli")
     private boolean aceptada_cli = false;
 
@@ -122,12 +131,48 @@ public class Solicitud{
         return aceptada_cli;
     }
 
+    public void setAceptada_cli(boolean aceptada_cli){
+        this.aceptada_cli = aceptada_cli;
+    }
+
     public boolean isAceptada_adm() {
         return aceptada_adm;
     }
 
+    public void setAceptada_adm(boolean aceptada_adm){
+        this.aceptada_adm= aceptada_adm;
+    }
+
     public boolean isAceptada_tec() {
 		return aceptada_tec;
+    }
+
+    public void setAceptada_tec(boolean aceptada_tec){
+        this.aceptada_tec = aceptada_tec;
+    }
+
+    public String getAsunto() {
+        return asunto;
+    }
+
+    public void setAsunto(String asunto) {
+        this.asunto = asunto;
+    }
+
+    public int getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(int categoria) {
+        this.categoria = categoria;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
 }
