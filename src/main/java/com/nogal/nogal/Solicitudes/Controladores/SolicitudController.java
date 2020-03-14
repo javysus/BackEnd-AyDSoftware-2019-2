@@ -20,9 +20,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("v1/solicitud")
 @CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST})
-public class ConsultaController{
+@RequestMapping("v1/solicitud")
+public class SolicitudController{
     @Autowired
     SolicitudService servicio;
 

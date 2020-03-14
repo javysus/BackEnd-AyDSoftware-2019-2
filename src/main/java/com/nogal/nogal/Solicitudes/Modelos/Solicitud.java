@@ -7,8 +7,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.databind.annotation.JsonAppend.Prop;
-
 @Entity
 @Table(name="solicitud")
 public class Solicitud{
