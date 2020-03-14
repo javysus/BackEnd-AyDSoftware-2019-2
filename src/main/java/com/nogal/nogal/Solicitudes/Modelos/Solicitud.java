@@ -39,7 +39,7 @@ public class Solicitud{
     private String asunto;
 
     @Column(name="categoria")
-    private int categoria;
+    private String categoria;
 
     @Column(name="descripcion")
     private String descripcion;
@@ -57,7 +57,8 @@ public class Solicitud{
 
     }
 
-    public Solicitud(long id, long tecnico, long cliente, long monto, String direccion, float latitud, float longitud,
+    public Solicitud(long id, long tecnico, long cliente, long monto, String direccion, String asunto, String categoria, 
+            String descripcion, float latitud, float longitud,
             boolean aceptada_cli, boolean aceptada_adm, boolean aceptada_tec) {
         this.id = id;
         this.tecnico = tecnico;
@@ -66,6 +67,9 @@ public class Solicitud{
         this.direccion = direccion;
         this.latitud = latitud;
         this.longitud = longitud;
+        this.asunto = asunto;
+        this.categoria = categoria;
+        this.descripcion = descripcion;
         this.aceptada_cli = aceptada_cli;
         this.aceptada_adm = aceptada_adm;
         this.aceptada_tec = aceptada_tec;
@@ -159,11 +163,11 @@ public class Solicitud{
         this.asunto = asunto;
     }
 
-    public int getCategoria() {
+    public String getCategoria() {
         return categoria;
     }
 
-    public void setCategoria(int categoria) {
+    public void setCategoria(String categoria) {
         this.categoria = categoria;
     }
 

@@ -27,7 +27,7 @@ create table public.solicitud(
     latitud numeric,
     longitud numeric,
     asunto varchar(150),
-    categoria int,
+    categoria varchar(100),
     descripcion varchar(300),
     aceptada_cli boolean default FALSE,
     aceptada_tec boolean default FALSE,
