@@ -51,4 +51,16 @@ public class AuthControlador{
         return userServicio.crear(request);
     }
 
+    @PostMapping("/obtenerID")
+    public long obtenerID(@RequestBody String token){
+        long ID = jwtTokenUtil.extractId(token);
+        return ID;
+    }
+
+    @PostMapping("/obtenerUser")
+    public String obtenerUser(@RequestBody String token){
+        String username = jwtTokenUtil.extractUsername(token);
+        return username;
+    }
+
 }
