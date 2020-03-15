@@ -20,7 +20,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/v1/solicitud")
 @CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST})
 public class SolicitudController{
     @Autowired
@@ -29,7 +28,7 @@ public class SolicitudController{
     @Autowired
     JwtUtil jwtUtil;
 
-    @PostMapping("/solicitud")
+    @PostMapping("/crearsolicitud")
     public boolean crear(@RequestBody @Valid Solicitud solicitud){
         return servicio.crear(solicitud);
     }
