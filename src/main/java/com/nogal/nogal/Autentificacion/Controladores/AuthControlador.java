@@ -14,6 +14,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -52,14 +53,14 @@ public class AuthControlador{
         return userServicio.crear(request);
     }
 
-    @GetMapping("/obtenerID")
-    public long obtenerID(String token){
+    @GetMapping("/obtenerID/{token}")
+    public long obtenerID(@PathVariable("token") String token){
         long ID = jwtTokenUtil.extractId(token);
         return ID;
     }
 
-    @GetMapping("/obtenerUser")
-    public String obtenerUser(String token){
+    @GetMapping("/obtenerUser/{token}")
+    public String obtenerUser(@PathVariable("token") String token){
         String username = jwtTokenUtil.extractUsername(token);
         return username;
     }
