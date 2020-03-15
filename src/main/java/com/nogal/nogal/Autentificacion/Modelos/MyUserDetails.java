@@ -20,7 +20,7 @@ public class MyUserDetails implements UserDetails {
     private final List<GrantedAuthority> roles;
     
 
-    public MyUserDetails(final User user){
+    public MyUserDetails(User user){
         this.userName = user.getUserName();
         this.password = user.getPassword();
         this.nombre = user.getNombre();
