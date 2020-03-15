@@ -53,13 +53,13 @@ public class AuthControlador{
     }
 
     @GetMapping("/obtenerID")
-    public long obtenerID(@RequestBody String token){
+    public long obtenerID(String token){
         long ID = jwtTokenUtil.extractId(token);
         return ID;
     }
 
     @GetMapping("/obtenerUser")
-    public String obtenerUser(@RequestBody String token){
+    public String obtenerUser(String token){
         String username = jwtTokenUtil.extractUsername(token);
         return username;
     }
