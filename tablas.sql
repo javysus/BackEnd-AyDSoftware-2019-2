@@ -20,7 +20,7 @@ create table public.tecnico(
 
 create table public.solicitud(
     id_solicitud serial not null,
-    id_usuario int not null,
+    id_usuario int,
     id_tecnico int,
     monto int default 0,
     direccion varchar(100),

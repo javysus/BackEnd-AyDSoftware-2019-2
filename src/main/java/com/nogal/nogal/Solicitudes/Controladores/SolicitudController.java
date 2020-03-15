@@ -20,26 +20,26 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("v1/solicitud")
+@RequestMapping("/v1/solicitud")
 @CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST})
 public class SolicitudController{
     @Autowired
     SolicitudService servicio;
 
-    /*@Autowired
-    JwtUtil jwtUtil;*/
+    @Autowired
+    JwtUtil jwtUtil;
 
     @PostMapping("/solicitud")
     public boolean crear(@RequestBody @Valid Solicitud solicitud){
         return servicio.crear(solicitud);
     }
 
-    /*@GetMapping("/solicitudes")
+    @GetMapping("/solicitudes")
     public List<Solicitud> obtenerId(@RequestHeader("Authorization") String jwt){
         // extraigo el usuario
         jwt = jwt.substring(7);
         final long id = jwtUtil.extractId(jwt);
 
         return servicio.obtenerAllId(id);
-    }*/
+    }
 }
