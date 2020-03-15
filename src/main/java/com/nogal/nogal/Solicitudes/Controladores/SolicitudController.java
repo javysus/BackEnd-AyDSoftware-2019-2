@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.validation.Valid;
 
-import com.nogal.nogal.Autentificacion.Servicios.UserServicio;
 import com.nogal.nogal.Autentificacion.util.JwtUtil;
 import com.nogal.nogal.Solicitudes.Modelos.Solicitud;
 import com.nogal.nogal.Solicitudes.Servicio.SolicitudService;
@@ -15,7 +14,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
