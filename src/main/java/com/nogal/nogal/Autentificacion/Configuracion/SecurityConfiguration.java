@@ -1,7 +1,7 @@
 package com.nogal.nogal.Autentificacion.Configuracion;
 
 import com.nogal.nogal.Autentificacion.filter.JwtRequestFilter;
-import com.nogal.nogal.Solicitudes;
+import com.nogal.nogal.Solicitudes.Controladores.SolicitudController;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
