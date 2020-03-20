@@ -1,6 +1,7 @@
 package com.nogal.nogal.Autentificacion.Configuracion;
 
 import com.nogal.nogal.Autentificacion.filter.JwtRequestFilter;
+import com.nogal.nogal.Solicitudes;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -26,6 +27,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.inMemoryAuthentication().withUser("admin").password("root123").roles("ADMIN");
         auth.userDetailsService(servicio);
     }
     
@@ -37,6 +39,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
             .antMatchers("/crear").permitAll()
             .antMatchers("/obtenerID/**").permitAll()
             .antMatchers("/obtenerUser/**").permitAll()
+            .antMatchers("/crearsolicitud").access("hasRole('USER')")
             .antMatchers("/").permitAll()
             .anyRequest().authenticated()
             .and().sessionManagement()
