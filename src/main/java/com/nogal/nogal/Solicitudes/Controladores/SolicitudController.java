@@ -31,11 +31,9 @@ public class SolicitudController{
         return servicio.crear(solicitud);
     }
 
-    @GetMapping("/solicitudes")
-    public List<Solicitud> obtenerId(@RequestHeader("Authorization") String jwt){
-        // extraigo el usuario
-        jwt = jwt.substring(7);
-        final long id = jwtUtil.extractId(jwt);
+    @GetMapping("/solicitudes_tec/{token}")
+    public List<Solicitud> obtenerId(@RequestHeader("Authorization") @PathVariable("token") String token){
+        long id = jwtUtil.extractId(token);
 
         return servicio.obtenerAllId(id);
     }
