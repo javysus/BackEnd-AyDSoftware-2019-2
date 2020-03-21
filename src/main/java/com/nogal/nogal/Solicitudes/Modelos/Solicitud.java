@@ -59,7 +59,7 @@ public class Solicitud{
 
     }
 
-    public Solicitud(long id_sol, long tecnico, long cliente, long monto, String direccion, String asunto, String categoria, 
+    public Solicitud(long id_sol, long tecnico, long cliente, long monto, String direccion, Date fecha, String asunto, String categoria, 
             String descripcion, float latitud, float longitud,
             boolean aceptada_cli, boolean aceptada_adm, boolean aceptada_tec) {
         this.id_sol = id_sol;
@@ -67,6 +67,7 @@ public class Solicitud{
         this.cliente = cliente;
         this.monto = monto;
         this.direccion = direccion;
+        this.fecha = fecha;
         this.latitud = latitud;
         this.longitud = longitud;
         this.asunto = asunto;
@@ -121,7 +122,7 @@ public class Solicitud{
         return this.fecha;
     }
 
-    public void setFecha(date fecha) {
+    public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
 
