@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PuttMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestHeader;
@@ -39,7 +40,7 @@ public class SolicitudController{
         return servicio.obtenerAllId(id);
     }
 
-    @PostMapping("/actualizarsolicitud")
+    @PutMapping("/actualizarsolicitud")
     public boolean actualizarSol(@RequestHeader("Authorization") @RequestBody @Valid Solicitud solicitud){
         return servicio.actualizar(solicitud);
     }
