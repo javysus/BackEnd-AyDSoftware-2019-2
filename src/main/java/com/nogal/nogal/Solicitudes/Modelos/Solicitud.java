@@ -19,31 +19,31 @@ public class Solicitud{
     @Column(name="id_tecnico")
     private long tecnico;
 
-    @Column(name="id_usuario", updatable=false)
+    @Column(name="id_usuario")
     private long cliente;
 
     @Column(name="monto")
     private long monto;
 
-    @Column(name="direccion", updatable=false)
+    @Column(name="direccion")
     private String direccion;
 
     @Column(name = "fecha")
     private Date fecha;
 
-    @Column(name="latitud", updatable=false)
+    @Column(name="latitud")
     private float latitud;
 
-    @Column(name="longitud", updatable=false)
+    @Column(name="longitud")
     private float longitud;
 
-    @Column(name="asunto", updatable=false)
+    @Column(name="asunto")
     private String asunto;
 
-    @Column(name="categoria", updatable=false)
+    @Column(name="categoria")
     private String categoria;
 
-    @Column(name="descripcion", updatable=false)
+    @Column(name="descripcion")
     private String descripcion;
     
     @Column(name="aceptada_cli")
