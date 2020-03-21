@@ -40,7 +40,7 @@ public class SolicitudController{
     }
 
     @PostMapping("/actualizarsolicitud")
-    public boolean actualizarSol(@RequestHeader("Authorization") @PathVariable("id") Solicitud solicitud){
+    public boolean actualizarSol(@RequestHeader("Authorization") Solicitud solicitud){
         return servicio.actualizar(solicitud);
     }
 }
