@@ -11,7 +11,8 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface SolicitudRepo extends JpaRepository<Solicitud, Serializable>{
-    
+
+    Solicitud findByID(long ID);
     public abstract List<Solicitud> findByTecnicoOrCliente(long tecnico, long cliente);
 
 }

@@ -9,7 +9,6 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@DynamicUpdate
 @Table(name="solicitud")
 public class Solicitud{
     @Id
