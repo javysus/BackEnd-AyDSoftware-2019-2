@@ -14,7 +14,7 @@ public class Solicitud{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="id_solicitud")
-    private long id_sol;
+    private long id;
 
     @Column(name="id_tecnico")
     private long tecnico;
@@ -59,10 +59,10 @@ public class Solicitud{
 
     }
 
-    public Solicitud(long id_sol, long tecnico, long cliente, long monto, String direccion, Date fecha, String asunto, String categoria, 
+    public Solicitud(long id, long tecnico, long cliente, long monto, String direccion, Date fecha, String asunto, String categoria, 
             String descripcion, float latitud, float longitud,
             boolean aceptada_cli, boolean aceptada_adm, boolean aceptada_tec) {
-        this.id_sol = id_sol;
+        this.id = id;
         this.tecnico = tecnico;
         this.cliente = cliente;
         this.monto = monto;
@@ -79,11 +79,11 @@ public class Solicitud{
     }
 
     public long getId() {
-        return this.id_sol;
+        return this.id;
     }
 
-    public void setId(long id_sol) {
-        this.id_sol = id_sol;
+    public void setId(long id) {
+        this.id = id;
     }
 
     public long getTecnico() {
