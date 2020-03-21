@@ -1,6 +1,7 @@
 package com.nogal.nogal.Solicitudes.Servicio;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.nogal.nogal.Solicitudes.Modelos.Solicitud;
 import com.nogal.nogal.Solicitudes.Repositorio.SolicitudRepo;
@@ -24,8 +25,11 @@ public class SolicitudService{
     }
 
     public boolean actualizar(Solicitud sol){
+        Solicitud sol_act = repositorio.findOne(sol.getId());
+        sol_act.setAceptada_tec(sol.isAceptada_tec());
+        
         try{
-            repositorio.save(sol);
+            repositorio.save(sol_act);
             return true;
         } catch(Exception e){
             return false;

@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
+@DynamicUpdate
 @Table(name="solicitud")
 public class Solicitud{
     @Id
@@ -19,31 +20,31 @@ public class Solicitud{
     @Column(name="id_tecnico")
     private long tecnico;
 
-    @Column(name="id_usuario")
+    @Column(name="id_usuario", updatable=false)
     private long cliente;
 
     @Column(name="monto")
     private long monto;
 
-    @Column(name="direccion")
+    @Column(name="direccion", updatable=false)
     private String direccion;
 
     @Column(name = "fecha")
     private Date fecha;
 
-    @Column(name="latitud")
+    @Column(name="latitud", updatable=false)
     private float latitud;
 
-    @Column(name="longitud")
+    @Column(name="longitud", updatable=false)
     private float longitud;
 
-    @Column(name="asunto")
+    @Column(name="asunto", updatable=false)
     private String asunto;
 
-    @Column(name="categoria")
+    @Column(name="categoria", updatable=false)
     private String categoria;
 
-    @Column(name="descripcion")
+    @Column(name="descripcion", updatable=false)
     private String descripcion;
     
     @Column(name="aceptada_cli")
