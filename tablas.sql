@@ -24,6 +24,7 @@ create table public.solicitud(
     id_tecnico int,
     monto int default 0,
     direccion varchar(100),
+    fecha DATETIME,
     latitud numeric,
     longitud numeric,
     asunto varchar(150),

@@ -1,5 +1,6 @@
 package com.nogal.nogal.Solicitudes.Modelos;
 
+import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,7 +14,7 @@ public class Solicitud{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="id_solicitud")
-    private long id;
+    private long id_sol;
 
     @Column(name="id_tecnico")
     private long tecnico;
@@ -26,6 +27,9 @@ public class Solicitud{
 
     @Column(name="direccion")
     private String direccion;
+
+    @Column(name = "fecha")
+    private date fecha;
 
     @Column(name="latitud")
     private float latitud;
@@ -55,10 +59,10 @@ public class Solicitud{
 
     }
 
-    public Solicitud(long id, long tecnico, long cliente, long monto, String direccion, String asunto, String categoria, 
+    public Solicitud(long id_sol, long tecnico, long cliente, long monto, String direccion, String asunto, String categoria, 
             String descripcion, float latitud, float longitud,
             boolean aceptada_cli, boolean aceptada_adm, boolean aceptada_tec) {
-        this.id = id;
+        this.id_sol = id_sol;
         this.tecnico = tecnico;
         this.cliente = cliente;
         this.monto = monto;
@@ -74,11 +78,11 @@ public class Solicitud{
     }
 
     public long getId() {
-        return this.id;
+        return this.id_sol;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setId(long id_sol) {
+        this.id_sol = id_sol;
     }
 
     public long getTecnico() {
@@ -111,6 +115,14 @@ public class Solicitud{
 
     public void setDireccion(String direccion) {
         this.direccion = direccion;
+    }
+
+    public date getFecha() {
+        return this.fecha;
+    }
+
+    public void setFecha(date fecha) {
+        this.fecha = fecha;
     }
 
     public float getLatitud() {
