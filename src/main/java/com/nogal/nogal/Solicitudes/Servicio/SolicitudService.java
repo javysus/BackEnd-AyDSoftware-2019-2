@@ -25,6 +25,8 @@ public class SolicitudService{
     }
 
     public boolean actualizar(Solicitud sol){
+        Optional<Solicitud> solicitud = repositorio.findById(sol.getId());
+        Solicitud sol_original = solicitud.get();
         try{
             repositorio.save(sol);
             return true;
@@ -39,7 +41,7 @@ public class SolicitudService{
         solicitud_original.setAceptada_tec(sol.isAceptada_tec());
 
         try{
-            repositorio.save(solicitud_oroginal);
+            repositorio.save(solicitud_original);
             return true;
         } catch(Exception e){
             return false;
