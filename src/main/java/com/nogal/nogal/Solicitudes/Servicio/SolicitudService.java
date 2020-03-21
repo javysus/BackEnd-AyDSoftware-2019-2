@@ -29,7 +29,7 @@ public class SolicitudService{
         sol_act.setAceptada_tec(sol.isAceptada_tec());*/
 
         try{
-            repositorio.save(sol_act);
+            repositorio.save(sol);
             return true;
         } catch(Exception e){
             return false;
