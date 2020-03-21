@@ -25,11 +25,12 @@ public class SolicitudService{
     }
 
     public boolean actualizar(Solicitud sol){
-        /*Solicitud sol_act = repositorio.findByID(sol.getId());
-        sol_act.setAceptada_tec(sol.isAceptada_tec());*/
+        Optional<Solicitud> solicitud = repositorio.findById(sol.getId());
+        Solicitud sol_act = solicitud.get();
+        sol_act.setAceptada_tec(sol.isAceptada_tec());
 
         try{
-            repositorio.save(sol);
+            repositorio.save(sol_act);
             return true;
         } catch(Exception e){
             return false;
