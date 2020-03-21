@@ -25,17 +25,26 @@ public class SolicitudService{
     }
 
     public boolean actualizar(Solicitud sol){
-        Optional<Solicitud> solicitud = repositorio.findById(sol.getId());
-        Solicitud sol_act = solicitud.get();
-        sol_act.setAceptada_tec(sol.isAceptada_tec());
-
         try{
-            repositorio.save(sol_act);
+            repositorio.save(sol);
             return true;
         } catch(Exception e){
             return false;
         }
     }
+
+    /*public boolean actualizar(long id, Solicitud sol){
+        Optional<Solicitud> solicitud = repositorio.findById(id);
+        Solicitud solicitud_original = solicitud.get();
+        solicitud_original.setAceptada_tec(sol.isAceptada_tec());
+
+        try{
+            repositorio.save(solicitud_oroginal);
+            return true;
+        } catch(Exception e){
+            return false;
+        }
+    }*/
 
     public List<Solicitud> obtenerAllId(long id){
         return repositorio.findByTecnicoOrCliente(id, id);
