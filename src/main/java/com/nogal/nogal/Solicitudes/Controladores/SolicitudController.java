@@ -32,10 +32,15 @@ public class SolicitudController{
         return servicio.crear(solicitud);
     }
 
-    @GetMapping("/solicitudes_tec/{token}")
+    @GetMapping("/solicitudes/{token}")
     public List<Solicitud> obtenerId(@RequestHeader("Authorization") @PathVariable("token") String token){
         long id = jwtUtil.extractId(token);
 
         return servicio.obtenerAllId(id);
+    }
+
+    @GetMapping("/actualizarsolicitud")
+    public boolean actualizarSol(@RequestHeader("Authorization") @PathVariable("id") Solicitud solicitud){
+        return servicio.actualizar(solicitud);
     }
 }
