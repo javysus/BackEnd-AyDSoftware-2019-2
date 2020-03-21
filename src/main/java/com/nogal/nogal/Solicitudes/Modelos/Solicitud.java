@@ -29,7 +29,7 @@ public class Solicitud{
     private String direccion;
 
     @Column(name = "fecha")
-    private date fecha;
+    private Date fecha;
 
     @Column(name="latitud")
     private float latitud;
@@ -117,7 +117,7 @@ public class Solicitud{
         this.direccion = direccion;
     }
 
-    public date getFecha() {
+    public Date getFecha() {
         return this.fecha;
     }
 
