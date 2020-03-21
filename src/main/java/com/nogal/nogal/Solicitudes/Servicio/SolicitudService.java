@@ -25,8 +25,8 @@ public class SolicitudService{
     }
 
     public boolean actualizar(Solicitud sol){
-        Solicitud sol_act = repositorio.findByID(sol.getId());
-        sol_act.setAceptada_tec(sol.isAceptada_tec());
+        /*Solicitud sol_act = repositorio.findByID(sol.getId());
+        sol_act.setAceptada_tec(sol.isAceptada_tec());*/
 
         try{
             repositorio.save(sol_act);
