@@ -28,6 +28,13 @@ public class UserServicio{
         return user.get().getUserName();
     }
 
+    public String obtenerRol(long id){
+        Optional<User> user = repositorio.findById(id);
+        
+        user.orElse(null);
+        return user.get().getRoles();
+    }
+
     public Boolean crear(User usuario){
         try{
             repositorio.save(usuario);

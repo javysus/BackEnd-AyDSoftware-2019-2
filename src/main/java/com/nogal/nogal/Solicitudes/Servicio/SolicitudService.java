@@ -33,19 +33,6 @@ public class SolicitudService{
         }
     }
 
-    /*public boolean actualizar(long id, Solicitud sol){
-        Optional<Solicitud> solicitud = repositorio.findById(id);
-        Solicitud solicitud_original = solicitud.get();
-        solicitud_original.setAceptada_tec(sol.isAceptada_tec());
-
-        try{
-            repositorio.save(solicitud_original);
-            return true;
-        } catch(Exception e){
-            return false;
-        }
-    }*/
-
     public List<Solicitud> obtenerAllId(long id){
         return repositorio.findByTecnicoOrCliente(id, id);
     }
