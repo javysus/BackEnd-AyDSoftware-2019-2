@@ -25,8 +25,6 @@ public class SolicitudService{
     }
 
     public boolean actualizar(Solicitud sol){
-        Optional<Solicitud> solicitud = repositorio.findById(sol.getId());
-        Solicitud sol_original = solicitud.get();
         try{
             repositorio.save(sol);
             return true;

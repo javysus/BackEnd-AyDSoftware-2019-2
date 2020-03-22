@@ -21,5 +21,12 @@ public class UserServicio{
         return user.get();
     }
 
+    public String obtenerUser(long id){
+        Optional<String> user = repositorio.findUsernameById(id);
+
+        user.orElse(null);
+        return user.get();
+    }
+
 
 }

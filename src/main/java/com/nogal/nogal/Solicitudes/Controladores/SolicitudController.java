@@ -45,8 +45,5 @@ public class SolicitudController{
         return servicio.actualizar(solicitud);
     }
 
-    /*@PutMapping("/actualizarsol/{id}")
-    public boolean update(@Requestheader("Authorization") @Pathvariable("id") long id, @RequestBody Solicitud solicitud){
-        return servicio.actualizar(id, solicitud);
-    }*/
+    
 }

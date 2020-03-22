@@ -11,4 +11,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserRepositorio extends JpaRepository<User, Serializable>{
     Optional<User> findByUserName(String userName);
+    Optional<String> findUserNameById(long Id);
 }

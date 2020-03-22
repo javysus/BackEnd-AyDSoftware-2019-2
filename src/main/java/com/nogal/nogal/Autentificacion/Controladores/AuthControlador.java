@@ -59,10 +59,9 @@ public class AuthControlador{
         return ID;
     }
 
-    @GetMapping("/obtenerUser/{token}")
-    public String obtenerUser(@PathVariable("token") String token){
-        String username = jwtTokenUtil.extractUsername(token);
-        return username;
+    @GetMapping("/obtenerUser/{id}")
+    public String obtenerUser(@PathVariable("id") long id){
+        return obtenerUser(id);
     }
 
 }
