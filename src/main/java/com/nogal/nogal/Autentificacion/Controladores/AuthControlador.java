@@ -32,6 +32,9 @@ public class AuthControlador{
     @Autowired
     private JwtUtil jwtTokenUtil;
 
+    @Autowired
+    private UserServicio servicio;
+
     @PostMapping("/autentificar")
     public ResponseEntity<?> createAuthToken(@RequestBody AuthenticationRequest request) throws Exception{
         try {
@@ -61,7 +64,7 @@ public class AuthControlador{
 
     @GetMapping("/obtenerUser/{id}")
     public String obtenerUser(@PathVariable("id") long id){
-        return obtenerUser(id);
+        return servicio.obtenerUser(id);
     }
 
 }

@@ -2,7 +2,7 @@ CREATE DATABASE asistencias; -- ejecutar solo
 
 create table public.usuario(
     id_usuario serial not null,
-    user_name varchar(100) not null,
+    user_name varchar(100) not null UNIQUE,
     password varchar(100) not null,
     nombre varchar(100) not null,
     apellido varchar(100) not null,
