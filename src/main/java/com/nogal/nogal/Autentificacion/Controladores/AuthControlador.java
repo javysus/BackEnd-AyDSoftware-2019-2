@@ -72,7 +72,7 @@ public class AuthControlador{
     @GetMapping("/obtenerRol/{token}")
     public String obtenerRol(@PathVariable("token") String token){
         long ID = jwtTokenUtil.extractId(token);
-        return servicio.obtenerRol(id);
+        return servicio.obtenerRol(ID);
     }
 
 }
