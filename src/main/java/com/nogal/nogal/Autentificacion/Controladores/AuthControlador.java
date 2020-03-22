@@ -53,8 +53,8 @@ public class AuthControlador{
     }
 
     @PostMapping("/crear")
-    public Boolean crearUsuario(@RequestBody AuthenticationRequest request){
-        return userServicio.crear(request);
+    public Boolean crearUsuario(@RequestBody User request){
+        return servicio.crear(request);
     }
 
     @GetMapping("/obtenerID/{token}")

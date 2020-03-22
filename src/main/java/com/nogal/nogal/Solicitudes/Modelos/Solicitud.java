@@ -58,13 +58,16 @@ public class Solicitud{
     @Column(name = "aceptada_tec")
     private boolean aceptada_tec = false;
 
+    @Column(name = "finalizada")
+    private boolean finalizada = false;
+
     public Solicitud() {
 
     }
 
     public Solicitud(long id, long tecnico, long cliente, long monto, String direccion, Date fecha, String asunto, String categoria, 
             String descripcion, float latitud, float longitud,
-            boolean aceptada_fecha, boolean aceptada_precio, boolean aceptada_adm, boolean aceptada_tec) {
+            boolean aceptada_fecha, boolean aceptada_precio, boolean aceptada_adm, boolean aceptada_tec, boolean finalizada) {
         this.id = id;
         this.tecnico = tecnico;
         this.cliente = cliente;
@@ -80,6 +83,7 @@ public class Solicitud{
         this.aceptada_precio = aceptada_precio;
         this.aceptada_adm = aceptada_adm;
         this.aceptada_tec = aceptada_tec;
+        this.finalizada = finalizada;
     }
 
     public long getId() {
@@ -200,6 +204,14 @@ public class Solicitud{
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    public boolean isFinalizada() {
+        return this.finalizada;
+    }
+
+    public void setFinalizada(boolean finalizada) {
+        this.finalizada = finalizada;
     }
 
 }

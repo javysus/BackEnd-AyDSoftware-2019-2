@@ -28,5 +28,13 @@ public class UserServicio{
         return user.get().getUserName();
     }
 
+    public Boolean crear(User usuario){
+        try{
+            repositorio.save(usuario);
+            return true;
+        } catch (Exception e){
+            return false;
+        }
+    }
 
 }
