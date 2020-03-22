@@ -2,6 +2,7 @@ package com.nogal.nogal.Autentificacion.Controladores;
 
 import com.nogal.nogal.Autentificacion.Modelos.AuthenticationRequest;
 import com.nogal.nogal.Autentificacion.Modelos.AuthenticationResponse;
+import com.nogal.nogal.Autentificacion.Modelos.User;
 import com.nogal.nogal.Autentificacion.Servicios.MyUserDetailsServicio;
 import com.nogal.nogal.Autentificacion.Servicios.UserServicio;
 import com.nogal.nogal.Autentificacion.util.JwtUtil;
