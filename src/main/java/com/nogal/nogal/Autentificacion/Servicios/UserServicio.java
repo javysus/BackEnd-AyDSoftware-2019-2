@@ -22,10 +22,10 @@ public class UserServicio{
     }
 
     public String obtenerUser(long id){
-        Optional<String> user = repositorio.findUsernameById(id);
-
+        Optional<User> user = repositorio.findById(id);
+        
         user.orElse(null);
-        return user.get();
+        return user.get().getUserName();
     }
 
 
