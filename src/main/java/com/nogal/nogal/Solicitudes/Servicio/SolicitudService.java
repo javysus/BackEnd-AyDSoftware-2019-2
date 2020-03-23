@@ -36,4 +36,8 @@ public class SolicitudService{
     public List<Solicitud> obtenerAllId(long id){
         return repositorio.findByTecnicoOrCliente(id, id);
     }
+
+    public long eliminar(long id){
+        return repositorio.removeById(id);
+    }
 }

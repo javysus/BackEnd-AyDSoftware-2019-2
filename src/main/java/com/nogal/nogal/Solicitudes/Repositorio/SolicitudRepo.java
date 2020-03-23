@@ -14,5 +14,6 @@ public interface SolicitudRepo extends JpaRepository<Solicitud, Serializable>{
 
     Optional<Solicitud> findById(long id);
     public abstract List<Solicitud> findByTecnicoOrCliente(long tecnico, long cliente);
+    long removeById(long id);
 
 }

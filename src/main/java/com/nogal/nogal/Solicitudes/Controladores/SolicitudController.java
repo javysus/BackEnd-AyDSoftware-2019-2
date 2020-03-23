@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestHeader;
@@ -43,6 +44,11 @@ public class SolicitudController{
     @PutMapping("/actualizarsolicitud")
     public boolean actualizarSol(@RequestHeader("Authorization") @RequestBody @Valid Solicitud solicitud){
         return servicio.actualizar(solicitud);
+    }
+
+    @DeleteMapping("/eliminar/{id}")
+    public long eliminarSol(@RequestHeader("Authorization") @Pathvariable("id") long id){
+        return servicio.eliminar(id);
     }
 
 
