@@ -47,8 +47,8 @@ public class SolicitudController{
     }
 
     @DeleteMapping("/eliminar/{id}")
-    public long eliminarSol(@RequestHeader("Authorization") @PathVariable("id") long id){
-        return servicio.eliminar(id);
+    public void eliminarSol(@RequestHeader("Authorization") @PathVariable("id") long id) {
+        servicio.eliminar(id);
     }
 
 
