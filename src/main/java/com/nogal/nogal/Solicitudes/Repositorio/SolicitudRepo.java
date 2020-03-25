@@ -16,6 +16,8 @@ public interface SolicitudRepo extends JpaRepository<Solicitud, Serializable>{
     Optional<Solicitud> findById(long id);
     public abstract List<Solicitud> findByTecnicoOrCliente(long tecnico, long cliente);
 
+    public abstract List<Solicitud> findByAceptada_admTrue();
+
     @Transactional
     void deleteById(long id);
 

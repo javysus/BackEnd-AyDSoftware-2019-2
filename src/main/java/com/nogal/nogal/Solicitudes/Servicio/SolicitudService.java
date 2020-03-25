@@ -37,6 +37,10 @@ public class SolicitudService{
         return repositorio.findByTecnicoOrCliente(id, id);
     }
 
+    public List<Solicitud> obtenerAllAdmin(){
+        return repositorio.findByAceptada_admTrue();
+    }
+
     public void eliminar(long id) {
         repositorio.deleteById(id);
     }
