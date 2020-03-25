@@ -42,7 +42,7 @@ public class SolicitudController{
     }
 
     @GetMapping("/solicitudesAdmin")
-    public List<Solicitud> obtenerSolAdmin(@RequestHeader("Authorization")){
+    public List<Solicitud> obtenerSolAdmin(){
         return servicio.obtenerAllAdmin();
     }
 
