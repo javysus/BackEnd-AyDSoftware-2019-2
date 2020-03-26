@@ -2,5 +2,5 @@ projectKey=analisis
 serverUrl=http://localhost:9000
 serverVersion=8.2.0.32929
 dashboardUrl=http://localhost:9000/dashboard?id=analisis
-ceTaskId=AXEUxovI_edArYzWNRLn
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AXEUxovI_edArYzWNRLn
+ceTaskId=AXEVBWMn_edArYzWNRLo
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AXEVBWMn_edArYzWNRLo

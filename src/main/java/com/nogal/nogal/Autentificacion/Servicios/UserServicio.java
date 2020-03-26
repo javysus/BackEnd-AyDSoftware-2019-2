@@ -17,7 +17,7 @@ public class UserServicio{
     public User obtenerNombre(String nombre){
         Optional<User> user = repositorio.findByUserName(nombre);
 
-        user.(null);
+        user.orElse(null);
         return user.get();
     }
 
