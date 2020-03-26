@@ -11,5 +11,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface TecnicoRepo extends JpaRepository<Tecnico, Serializable>{
     Optional<Tecnico> findById(long Id);
-    Optional<Tecnico> findByEspecialidad(String especialidad);
+    public abstract List<Tecnico> findByEspecialidad(String especialidad);
 }

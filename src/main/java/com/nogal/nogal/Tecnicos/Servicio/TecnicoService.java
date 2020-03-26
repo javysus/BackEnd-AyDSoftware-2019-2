@@ -37,4 +37,8 @@ public class TecnicoService{
         }
     }
 
+    public List<Tecnico> obtenerPorEspecialidad(String especialidad){
+        return repositorio.findByEspecialidad(especialidad);
+    }
+
 }
