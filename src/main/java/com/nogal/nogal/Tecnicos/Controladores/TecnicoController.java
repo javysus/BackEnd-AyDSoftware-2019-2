@@ -33,8 +33,8 @@ public class TecnicoController{
         return servicio.crear(tecnico);
     }
 
-    @GetMapping("/tecnicosEspecialidad")
-    public List<Tecnico> obtenerTecnicos(@RequestHeader("Authorization") String especialidad){
+    @GetMapping("/tecnicosEspecialidad/{especialidad}")
+    public List<Tecnico> obtenerTecnicos(@RequestHeader("Authorization") @PathVariable("especialidad") String especialidad){
         return servicio.obtenerPorEspecialidad(especialidad);
     }
 }
