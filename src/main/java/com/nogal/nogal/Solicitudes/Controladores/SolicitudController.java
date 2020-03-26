@@ -41,6 +41,11 @@ public class SolicitudController{
         return servicio.obtenerAllId(id);
     }
 
+    @GetMapping("/asignarTecnicos")
+    public List<Solicitud> obtenerSolicitudesSinTecnico(){
+        return servicio.obtenerAllId(0);
+    }
+
     @GetMapping("/solicitudesAdmin")
     public List<Solicitud> obtenerSolAdmin(){
         return servicio.obtenerAllAdmin();
