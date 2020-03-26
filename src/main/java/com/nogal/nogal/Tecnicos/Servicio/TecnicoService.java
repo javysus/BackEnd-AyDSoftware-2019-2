@@ -1,6 +1,7 @@
 package com.nogal.nogal.Tecnicos.Servicio;
 
 import java.util.Optional;
+import java.util.List;
 
 import com.nogal.nogal.Tecnicos.Modelos.Tecnico;
 import com.nogal.nogal.Tecnicos.Repositorio.TecnicoRepo;

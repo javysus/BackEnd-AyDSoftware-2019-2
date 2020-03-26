@@ -1,6 +1,7 @@
 package com.nogal.nogal.Tecnicos.Controladores;
 
 import javax.validation.Valid;
+import java.util.List;
 
 import com.nogal.nogal.Autentificacion.util.JwtUtil;
 import com.nogal.nogal.Tecnicos.Modelos.Tecnico;

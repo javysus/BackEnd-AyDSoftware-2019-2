@@ -2,6 +2,7 @@ package com.nogal.nogal.Tecnicos.Repositorio;
 
 import java.io.Serializable;
 import java.util.Optional;
+import java.util.List;
 
 import com.nogal.nogal.Tecnicos.Modelos.Tecnico;
 
