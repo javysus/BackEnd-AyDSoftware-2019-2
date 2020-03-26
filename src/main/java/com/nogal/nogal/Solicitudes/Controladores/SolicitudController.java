@@ -41,10 +41,10 @@ public class SolicitudController{
         return servicio.obtenerAllId(id);
     }
 
-    /*@GetMapping("/solicitudesAdmin")
+    @GetMapping("/solicitudesAdmin")
     public List<Solicitud> obtenerSolAdmin(){
         return servicio.obtenerAllAdmin();
-    }*/
+    }
 
     @PutMapping("/actualizarsolicitud")
     public boolean actualizarSol(@RequestHeader("Authorization") @RequestBody @Valid Solicitud solicitud){

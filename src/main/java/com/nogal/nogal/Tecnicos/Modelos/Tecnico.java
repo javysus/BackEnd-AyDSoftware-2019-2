@@ -11,11 +11,10 @@ import javax.persistence.Table;
 @Table(name="tecnico")
 public class Tecnico{
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="id_tecnico")
     private long id;
 
-    @Column(name="tecnico_name")
+    /*@Column(name="tecnico_name")
     private String tecnicoName;
 
     @Column(name="password")
@@ -28,7 +27,7 @@ public class Tecnico{
     private String apellido;
 
     @Column(name="active")
-    private boolean active = true;
+    private boolean active = true;*/
 
     @Column(name="especialidad")
     private String especialidad;
@@ -37,13 +36,8 @@ public class Tecnico{
         
     }
 
-    public Tecnico(long id, String tecnicoName, String password, String nombre, String apellido, boolean active, String especialidad) {
+    public Tecnico(long id, String especialidad) {
         this.id = id;
-        this.tecnicoName = tecnicoName;
-        this.password = password;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.active = active;
         this.especialidad = especialidad;
     }
 
@@ -55,7 +49,7 @@ public class Tecnico{
         this.id = id;
     }
 
-    public String getTecnicoName() {
+    /*public String getTecnicoName() {
         return this.tecnicoName;
     }
 
@@ -93,7 +87,7 @@ public class Tecnico{
 
     public void setActive(boolean active) {
         this.active = active;
-    }
+    }*/
 
     public String getEspecialidad(){
         return this.especialidad;

@@ -14,7 +14,7 @@ public class TecnicoService{
     @Autowired
     TecnicoRepo repositorio;
 
-    public Tecnico obtenerNombre(String nombre){
+    /*public Tecnico obtenerNombre(String nombre){
         Optional<Tecnico> tecnico = repositorio.findByTecnicoName(nombre);
 
         tecnico.orElse(null);
@@ -26,7 +26,7 @@ public class TecnicoService{
         
         tecnico.orElse(null);
         return tecnico.get().getTecnicoName();
-    }
+    }*/
 
     public Boolean crear(Tecnico usuario){
         try{

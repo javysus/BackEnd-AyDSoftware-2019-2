@@ -33,7 +33,7 @@ public class TecnicoController{
         return servicio.crear(tecnico);
     }
 
-    @GetMapping("/obtenerId/{token}")
+    /*@GetMapping("/obtenerId/{token}")
     public long obtenerId(@PathVariable("token") String token){
         long ID = jwtTokenUtil.extractId(token);
         return ID;
@@ -42,5 +42,5 @@ public class TecnicoController{
     @GetMapping("/obtenerTecnico/{id}")
     public String obtenerTecnico(@PathVariable("id") long id){
         return servicio.obtenerTecnico(id);
-    }
+    }*/
 }
