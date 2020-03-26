@@ -1,6 +1,7 @@
 package com.nogal.nogal.Tecnicos.Controladores;
 
 import javax.validation.Valid;
+import java.util.List;
 
 import com.nogal.nogal.Autentificacion.util.JwtUtil;
 import com.nogal.nogal.Tecnicos.Modelos.Tecnico;
@@ -33,14 +34,8 @@ public class TecnicoController{
         return servicio.crear(tecnico);
     }
 
-    @GetMapping("/obtenerId/{token}")
-    public long obtenerId(@PathVariable("token") String token){
-        long ID = jwtTokenUtil.extractId(token);
-        return ID;
-    }
-
-    @GetMapping("/obtenerTecnico/{id}")
-    public String obtenerTecnico(@PathVariable("id") long id){
-        return servicio.obtenerTecnico(id);
+    @GetMapping("/tecnicosEspecialidad/{especialidad}")
+    public List<Tecnico> obtenerTecnicos(@RequestHeader("Authorization") @PathVariable("especialidad") String especialidad){
+        return servicio.obtenerPorEspecialidad(especialidad);
     }
 }

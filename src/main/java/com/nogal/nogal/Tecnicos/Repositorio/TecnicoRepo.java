@@ -2,6 +2,7 @@ package com.nogal.nogal.Tecnicos.Repositorio;
 
 import java.io.Serializable;
 import java.util.Optional;
+import java.util.List;
 
 import com.nogal.nogal.Tecnicos.Modelos.Tecnico;
 
@@ -10,7 +11,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface TecnicoRepo extends JpaRepository<Tecnico, Serializable>{
-    Optional<Tecnico> findByTecnicoName(String tecName);
     Optional<Tecnico> findById(long Id);
-    Optional<Tecnico> findByEspecialidad(String especialidad);
+    public abstract List<Tecnico> findByEspecialidad(String especialidad);
 }

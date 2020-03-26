@@ -53,7 +53,7 @@ public class Solicitud{
     private boolean aceptada_precio = false;
 
     @Column(name = "aceptada_adm")
-    private boolean aceptada_adm = false;
+    private boolean aceptadaAdm = false;
 
     @Column(name = "aceptada_tec")
     private boolean aceptada_tec = false;
@@ -64,7 +64,7 @@ public class Solicitud{
 
     public Solicitud(long id, long tecnico, long cliente, long monto, String direccion, Date fecha, String asunto, String categoria, 
             String descripcion, float latitud, float longitud,
-            boolean aceptada_fecha, boolean aceptada_precio, boolean aceptada_adm, boolean aceptada_tec) {
+            boolean aceptada_fecha, boolean aceptada_precio, boolean aceptadaAdm, boolean aceptada_tec) {
         this.id = id;
         this.tecnico = tecnico;
         this.cliente = cliente;
@@ -78,7 +78,7 @@ public class Solicitud{
         this.descripcion = descripcion;
         this.aceptada_fecha = aceptada_fecha;
         this.aceptada_precio = aceptada_precio;
-        this.aceptada_adm = aceptada_adm;
+        this.aceptadaAdm = aceptadaAdm;
         this.aceptada_tec = aceptada_tec;
     }
 
@@ -162,12 +162,12 @@ public class Solicitud{
         this.aceptada_precio = aceptada_precio;
     }
 
-    public boolean isAceptada_adm() {
-        return aceptada_adm;
+    public boolean isAceptadaAdm() {
+        return aceptadaAdm;
     }
 
-    public void setAceptada_adm(boolean aceptada_adm){
-        this.aceptada_adm= aceptada_adm;
+    public void setAceptada_adm(boolean aceptadaAdm){
+        this.aceptadaAdm= aceptadaAdm;
     }
 
     public boolean isAceptada_tec() {

@@ -38,7 +38,7 @@ public class SolicitudService{
     }
 
     public List<Solicitud> obtenerAllAdmin(){
-        return repositorio.findByAceptada_admTrue();
+        return repositorio.findByAceptadaAdmFalse();
     }
 
     public void eliminar(long id) {
