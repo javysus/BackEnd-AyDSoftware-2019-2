@@ -31,6 +31,7 @@ create table public.solicitud(
     categoria varchar(100),
     descripcion varchar(300),
     aceptada_cli boolean default FALSE,
+    aceptada_fecha boolean default FALSE,
     aceptada_tec boolean default FALSE,
     aceptada_adm boolean default FALSE,
     primary key (id_solicitud),
