@@ -30,7 +30,7 @@ public class TecnicoController{
     private JwtUtil jwtTokenUtil;
 
     @PostMapping("/crearTecnico")
-    public boolean crearTecnico(@RequestBody @Valid Tecnico tecnico){
+    public boolean crearTecnico(@RequestBody Tecnico tecnico){
         return servicio.crear(tecnico);
     }
 
