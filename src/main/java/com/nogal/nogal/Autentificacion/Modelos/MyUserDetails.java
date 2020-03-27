@@ -14,8 +14,6 @@ public class MyUserDetails implements UserDetails {
 
     private final String userName;
     private final String password;
-    private final String nombre;
-    private final String apellido;
     private final boolean active;
     private final List<GrantedAuthority> roles;
     
@@ -23,8 +21,6 @@ public class MyUserDetails implements UserDetails {
     public MyUserDetails(User user){
         this.userName = user.getUserName();
         this.password = user.getPassword();
-        this.nombre = user.getNombre();
-        this.apellido = user.getApellido();
         this.active = user.isActive();
         this.roles = Arrays.stream(user.getRoles().split(","))
                     .map(SimpleGrantedAuthority::new)
