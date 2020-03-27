@@ -19,7 +19,7 @@ public interface SolicitudRepo extends JpaRepository<Solicitud, Serializable>{
 
     public abstract List<Solicitud> findByAceptadaAdmFalse();
 
-    @Query("SELECT s FROM Solicitud s WHERE s.aceptada_cli='true' AND s.tecnico=0")
+    @Query("SELECT s FROM Solicitud s WHERE s.aceptada_cli='true' AND s.aceptada_fecha='true' AND s.tecnico=0")
     public abstract List<Solicitud> findSolporAsignar();
 
     @Transactional
