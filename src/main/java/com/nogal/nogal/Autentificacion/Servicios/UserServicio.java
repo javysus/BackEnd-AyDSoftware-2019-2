@@ -35,12 +35,12 @@ public class UserServicio{
         return user.get().getRoles();
     }
 
-    public Boolean crear(User usuario){
+    public long crear(User usuario){
         try{
             repositorio.save(usuario);
-            return true;
+            return usuario.getId();
         } catch (Exception e){
-            return false;
+            return 0;
         }
     }
 

@@ -11,7 +11,7 @@ import javax.persistence.Table;
 @Table(name="usuario")
 public class User{
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id_usuario")
     private long id;
 
@@ -20,12 +20,6 @@ public class User{
 
     @Column(name="password")
     private String password;
-
-    @Column(name="nombre")
-    private String nombre;
-
-    @Column(name="apellido")
-    private String apellido;
 
     @Column(name="active")
     private boolean active = true;
@@ -37,12 +31,10 @@ public class User{
         
     }
 
-    public User(long id, String userName, String password, String nombre, String apellido, boolean active, String roles) {
+    public User(long id, String userName, String password, boolean active, String roles) {
         this.id = id;
         this.userName = userName;
         this.password = password;
-        this.nombre = nombre;
-        this.apellido = apellido;
         this.active = active;
         this.roles = roles;
     }
@@ -67,24 +59,9 @@ public class User{
         return this.password;
     }
 
-    public String getNombre() {
-        return this.nombre;
-    }
-
-    public String getApellido() {
-        return this.apellido;
-    }
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
     }
 
     public boolean isActive() {

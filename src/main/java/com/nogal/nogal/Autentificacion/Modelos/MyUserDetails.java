@@ -11,7 +11,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class MyUserDetails implements UserDetails {
-    private static final long serialVersionUID = 752647229368576147L;  // unique id
 
     private final String userName;
     private final String password;
@@ -20,6 +19,7 @@ public class MyUserDetails implements UserDetails {
     private final boolean active;
     private final List<GrantedAuthority> roles;
     
+
     public MyUserDetails(User user){
         this.userName = user.getUserName();
         this.password = user.getPassword();
@@ -35,21 +35,6 @@ public class MyUserDetails implements UserDetails {
     public Collection<? extends GrantedAuthority> getAuthorities() {
         // TODO Auto-generated method stub
         return this.roles;
-    }
-
-    public String getNombre() {
-        // TODO Auto-generated method stub
-        return this.nombre;
-    }
-
-    public String getApellido() {
-        // TODO Auto-generated method stub
-        return this.apellido;
-    }
-
-    public boolean getActive() {
-        // TODO Auto-generated method stub
-        return this.active;
     }
 
     @Override

@@ -54,7 +54,7 @@ public class AuthControlador{
     }
 
     @PostMapping("/crear")
-    public Boolean crearUsuario(@RequestBody User request){
+    public long crearUsuario(@RequestBody User request){
         return servicio.crear(request);
     }
 

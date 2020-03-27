@@ -44,4 +44,8 @@ public class SolicitudService{
     public void eliminar(long id) {
         repositorio.deleteById(id);
     }
+
+    public List<Solicitud> solicitudesSinTecnico(){
+        return repositorio.findSolporAsignar();
+    }
 }

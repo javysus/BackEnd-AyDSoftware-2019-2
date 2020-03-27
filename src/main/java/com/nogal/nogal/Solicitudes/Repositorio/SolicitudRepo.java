@@ -9,6 +9,7 @@ import com.nogal.nogal.Solicitudes.Modelos.Solicitud;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.data.jpa.repository.Query;
 
 @Repository
 public interface SolicitudRepo extends JpaRepository<Solicitud, Serializable>{
@@ -17,6 +18,9 @@ public interface SolicitudRepo extends JpaRepository<Solicitud, Serializable>{
     public abstract List<Solicitud> findByTecnicoOrCliente(long tecnico, long cliente);
 
     public abstract List<Solicitud> findByAceptadaAdmFalse();
+
+    @Query("SELECT s FROM Solicitud s WHERE s.aceptada_cli='true' AND s.tecnico=0")
+    public abstract List<Solicitud> findSolporAsignar();
 
     @Transactional
     void deleteById(long id);

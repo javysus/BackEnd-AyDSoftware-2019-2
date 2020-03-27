@@ -1,6 +1,7 @@
 package com.nogal.nogal.Autentificacion.Configuracion;
 
 import com.nogal.nogal.Autentificacion.filter.JwtRequestFilter;
+import com.nogal.nogal.Solicitudes.Controladores.SolicitudController;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -11,7 +12,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
@@ -35,12 +36,13 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
         http.authorizeRequests()
             .antMatchers("/autentificar").permitAll()
             .antMatchers("/crear").permitAll()
+            .antMatchers("/crearTecnico").permitAll()
             .antMatchers("/obtenerID/**").permitAll()
             .antMatchers("/obtenerUser/**").permitAll()
             .antMatchers("/obtenerRol/**").permitAll()
             .antMatchers("/asignarTecnicos").permitAll()
-            .antMatchers("/solicitudesAdmin").access("hasROLE('ADMIN')")
-            .antMatchers("/tecnicosEspecialidad/**").access("hasROLE('ADMIN')")
+            .antMatchers("/solicitudesAdmin").permitAll()
+            .antMatchers("/tecnicosEspecialidad/**").permitAll()
             .antMatchers("/crearsolicitud").access("hasRole('USER')")
             .antMatchers("/").permitAll()
             .anyRequest().authenticated()
@@ -57,8 +59,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
     }
 
     @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
+    public PasswordEncoder getPasswordEncoder(){
+        return NoOpPasswordEncoder.getInstance();
     }
     
 }

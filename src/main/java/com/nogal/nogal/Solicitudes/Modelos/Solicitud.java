@@ -12,7 +12,7 @@ import javax.persistence.Table;
 @Table(name="solicitud")
 public class Solicitud{
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id_solicitud")
     private long id;
 
@@ -46,11 +46,8 @@ public class Solicitud{
     @Column(name="descripcion", updatable=false)
     private String descripcion;
     
-    @Column(name="aceptada_fecha")
-    private boolean aceptada_fecha = false;
-
-    @Column(name = "aceptada_precio")
-    private boolean aceptada_precio = false;
+    @Column(name="aceptada_cli")
+    private boolean aceptada_cli = false;
 
     @Column(name = "aceptada_adm")
     private boolean aceptadaAdm = false;
@@ -64,7 +61,7 @@ public class Solicitud{
 
     public Solicitud(long id, long tecnico, long cliente, long monto, String direccion, Date fecha, String asunto, String categoria, 
             String descripcion, float latitud, float longitud,
-            boolean aceptada_fecha, boolean aceptada_precio, boolean aceptadaAdm, boolean aceptada_tec) {
+            boolean aceptada_cli, boolean aceptadaAdm, boolean aceptada_tec) {
         this.id = id;
         this.tecnico = tecnico;
         this.cliente = cliente;
@@ -76,8 +73,7 @@ public class Solicitud{
         this.asunto = asunto;
         this.categoria = categoria;
         this.descripcion = descripcion;
-        this.aceptada_fecha = aceptada_fecha;
-        this.aceptada_precio = aceptada_precio;
+        this.aceptada_cli = aceptada_cli;
         this.aceptadaAdm = aceptadaAdm;
         this.aceptada_tec = aceptada_tec;
     }
@@ -146,20 +142,12 @@ public class Solicitud{
         this.longitud = longitud;
     }
 
-    public boolean isAceptada_fecha() {
-        return aceptada_fecha;
+    public boolean isAceptada_cli() {
+        return aceptada_cli;
     }
 
-    public void setAceptada_fecha(boolean aceptada_fecha){
-        this.aceptada_fecha = aceptada_fecha;
-    }
-
-    public boolean isAceptada_precio() {
-        return this.aceptada_precio;
-    }
-
-    public void setAceptada_precio(boolean aceptada_precio) {
-        this.aceptada_precio = aceptada_precio;
+    public void setAceptada_cli(boolean aceptada_cli){
+        this.aceptada_cli = aceptada_cli;
     }
 
     public boolean isAceptadaAdm() {

@@ -29,8 +29,8 @@ public class TecnicoController{
     @Autowired
     private JwtUtil jwtTokenUtil;
 
-    @PostMapping("/creartecnico")
-    public boolean crearTecnico(@RequestHeader("Authorization") @RequestBody @Valid Tecnico tecnico){
+    @PostMapping("/crearTecnico")
+    public boolean crearTecnico(@RequestBody @Valid Tecnico tecnico){
         return servicio.crear(tecnico);
     }
 

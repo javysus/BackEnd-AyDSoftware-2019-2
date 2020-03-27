@@ -14,20 +14,6 @@ public class Tecnico{
     @Column(name="id_tecnico")
     private long id;
 
-    /*@Column(name="tecnico_name")
-    private String tecnicoName;
-
-    @Column(name="password")
-    private String password;
-
-    @Column(name="nombre")
-    private String nombre;
-
-    @Column(name="apellido")
-    private String apellido;
-
-    @Column(name="active")
-    private boolean active = true;*/
 
     @Column(name="especialidad")
     private String especialidad;
@@ -48,46 +34,6 @@ public class Tecnico{
     public void setId(long id) {
         this.id = id;
     }
-
-    /*public String getTecnicoName() {
-        return this.tecnicoName;
-    }
-
-    public void setTecnicoName(String tecnicoName) {
-        this.tecnicoName = tecnicoName;
-    }
-
-    public String getPassword() {
-        return this.password;
-    }
-
-    public String getNombre() {
-        return this.nombre;
-    }
-
-    public String getApellido() {
-        return this.apellido;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
-
-    public boolean isActive() {
-        return this.active;
-    }
-
-    public void setActive(boolean active) {
-        this.active = active;
-    }*/
 
     public String getEspecialidad(){
         return this.especialidad;
