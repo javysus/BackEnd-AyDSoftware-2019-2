@@ -44,6 +44,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
             .antMatchers("/obtenerRol/**").permitAll()
             .antMatchers("/asignarTecnicos").permitAll()
             .antMatchers("/solicitudesAdmin").permitAll()
+            .antMatchers("/actualizarsolicitud").permitAll()
+            .antMatchers("/tecnicosEspecialidad/**").permitAll()
             .antMatchers("/tecnicosEspecialidad/**").permitAll()
             .antMatchers("/crearsolicitud").access("hasRole('USER')")
             .antMatchers("/").permitAll()
